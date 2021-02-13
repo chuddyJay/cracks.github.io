@@ -1,0 +1,236 @@
+body{
+
+	padding: 0px;
+	margin: 0px;
+
+}
+
+#topbarContainer {
+	
+	background-color: #800000;
+	width:100%;
+	height: 100px;
+	margin-bottom:none;
+	padding-top : none;
+	padding-bottom:none;
+	position:relative;
+	bottom:0;
+
+}
+
+#topbar-left{
+	position:relative;
+	top:5px;
+	float:left;
+	width:70%;
+	margin:0;
+}
+
+#topbar-right{
+	float:right;
+	width:30%;
+	height:100px;
+	margin:0;
+}
+
+#headCaption{
+
+	color: yellow;
+	padding: 0px 10px 0px 0px;
+	margin-left:0px;
+	font-size:50px;
+	float:left;
+	position:relative;	
+	
+}
+
+#searchButton{
+
+	float:left;
+	width:30%;
+	height:30%;
+
+}
+
+#searchIcon{
+	width:28px;
+	height:28px;
+	margin-top:1px;
+	margin-left:0;
+	background-color:white;
+}
+
+#searchButton{
+	margin-left:22px;
+	font-weight:bold;
+	float:left;
+
+}
+
+::-webkit-input-placeholder{
+	color:red;
+	font-family:sans-serif;
+	font-size:20px;
+	opacity:1;
+
+}
+
+a {
+
+	text-decoration: none;
+	color: yellow;
+}
+
+a:hover{
+
+	color: green;
+}
+
+#listContainer{
+
+	width:100%;
+	height:61px;
+	background-color:red;				
+	opacity:1;
+}
+
+#listContainerContent{
+
+	width:450px;
+	height:60px;
+	margin:0 auto;
+
+}
+
+.listings{
+	float:left;
+	border:1px solid grey;
+	padding-left: 20px;
+	padding-right:20px;
+	margin:none;
+	border-right:none;
+
+	
+}
+
+#latestVideos{
+	border-right:1px solid grey;
+	border-top-right-radius:10px;
+	border-bottom-right-radius:10px;
+}
+
+#models{
+
+	border-top-left-radius:10px;
+	border-bottom-left-radius:10px;
+}
+
+.list-design{
+	font-family:helvetica;
+	font-weight:bold;
+
+}
+
+.rectangle {
+	width:100%;
+	height:10px;
+	background-color:black;
+}
+
+
+#newRegistration{
+
+	width:100%;
+	height: 100vh;
+	/*the value of the height is vh to match the users screen height*/
+	/* 1vh is basically 1% therefore 100vh is 100%*/
+	background-color:blue;
+	
+}
+
+#register{
+
+	width:500px;
+	height:30px;
+	margin:0 auto;
+	
+	
+}
+
+label{
+
+	font-size:25px;
+	position: relative;
+	top:12px;
+	width:200px;
+	display:inline-block;
+	
+	
+}
+
+
+
+
+.input{
+	width:250px;
+	height:20px;
+	padding:5px;
+	margin-left:25px;
+	border-radius:5px;
+
+
+}
+
+.form-element{
+
+	margin-bottom:10px;
+}
+
+.login-element{
+
+	margin-bottom:10px;
+}
+#submitButton{
+
+	width:130px;
+	padding:5px 5px 12px 5px;
+	border:1px solid grey;
+	border-radius:5px;
+	font-size:25px;
+	margin-left:230px;
+}
+
+#login{
+
+	width:130px;
+	padding:5px 5px 12px 5px;
+	border:1px solid grey;
+	border-radius:5px;
+	font-size:25px;
+	margin-left:230px;
+
+}
+
+#errorMessage{
+
+	color:red;
+
+}
+
+#successMessage{
+
+	color:green;
+
+}
+
+.oldUsers{
+
+	font-family:sans-serif;
+	font-size:90%;
+	margin-bottom: 10px
+}
+	
+#loginModal{
+
+	display:none;
+}

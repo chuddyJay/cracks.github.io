@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+
+		<meta charset="utf-8">
+   		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+   		<!-- Bootstrap CSS -->
+   		
+
+	    <link rel="stylesheet" type="text/css" href="create_account.css">
+		
+		<title>create your account</title>
+
+
+		<script type="text/javascript"></script>
+
+		<script src="jquery.min.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="create_account.css">
+	
+	</head>
+	
+	<body>
+
+	<div id="topbarContainer">
+			
+			<div id="topbar-left">
+				
+				<div id="headCaption"><a href="">KNACKERS</a></div>
+
+				<input id="searchButton" type="text" name="Search" placeholder="Search Vids">
+
+				<img id="searchIcon"src="search_icon.png">
+
+			</div>
+			
+		
+		
+		</div>
+
+		<div class="rectangle"></div>
+
+		<div id="listContainer">
+
+			<div id="listContainerContent">
+
+				<div class="listings" id="models" > <h3 >Models</h3> </div>
+
+				<div class="listings" id="upload"> <h3 >Upload</h3> </div>
+
+				<div class="listings" id="tags"> <h3 >Tags</h3> </div>
+
+				<div class="listings" id="latestVideos"> <h3 >latest videos</h3> </div>
+
+			</div>
+			
+		</div>
+
+		<div class="rectangle"></div>
+
+
+		<div id="newRegistration">
+			
+			<div id="register">	
+
+
+				<div class="form-element">
+				
+					<label for="email" class="labelCredents">Email:</label>
+		  			<input type="text" id="email" name="email" placeholder="e.g asdf@gmail.com" class="input"> <br>
+
+	  			</div>
+	
+	  			<div class="form-element">
+
+					<label for="phone" class="labelCredents">Phone-No:</label>
+		  			<input type="text" id="phone" name="phone" placeholder="e.g 07018390809" class="input"> <br>
+
+		  		</div>
+
+	  			<div class="form-element">
+
+					<label for="password" class="labelCredents">Password:</label>
+		  			<input type="password" id="password" name="password" class="input"> <br>	
+
+		  		</div>
+
+	  			<div class="form-element">
+
+		  			<label for="passwordConfirm" class="labelCredents">Confirm Password:</label>
+		  			<input type="password" id="passwordConfirm" name="passwordConfirm" class="input"> <br>	
+
+		  		</div>
+
+
+	  			<div class="form-element">
+
+		  			<input type="submit" id="submitButton"  value="Sign Up">
+
+		  		</div>
+
+		  		<div class="oldUsers">already have an account, log in here 
+
+
+		  		</div>
+
+		  		<button id="login">login</button>
+
+		  		
+
+		  		<div id="errorMessage" class="oldUsers"></div>
+
+
+		  		<div id="successMessage" class="oldUsers"></div>
+
+
+	  		</div>
+
+	  		
+
+
+		</div>
+
+		<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+	    	<div id="id01" class="modal">
+	        
+		        <form class="modal-content animate" action="/action_page.php" method="post">
+		          <div class="imgcontainer">
+		            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+		            <img src="img_avatar2.png" alt="Avatar" class="avatar">
+		          </div>
+
+		          <div class="container">
+		            <label for="uname"><b>Username</b></label>
+		            <input type="text" placeholder="Enter Username" name="uname" required>
+
+		            <label for="psw"><b>Password</b></label>
+		            <input type="password" placeholder="Enter Password" name="psw" required>
+		              
+		            <button type="submit">Login</button>
+		            <label>
+		              <input type="checkbox" checked="checked" name="remember"> Remember me
+		            </label>
+		          </div>
+
+		          <div class="container" style="background-color:#f1f1f1">
+		            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+		            <span class="psw">Forgot <a href="#">password?</a></span>
+		          </div>
+		        </form>
+	     	 </div>
+
+	
+		<script type="text/javascript">
+
+			function isEmail(email) {
+				
+				// i created a function and named it isEmail
+				
+				var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+				// this regex variable gives the sequence of numbers and symbols that are recognized as email address componemts
+
+  				return regex.test(email);
+
+  				//then the clients email address tested on the my regex variable and returned 
+
+			}
+			
+			$("#submitButton").click(function(){
+
+				var errorMessage = "";
+				var fieldsMissing ="";
+				var successMessage = "congratulations, you've successfully created an account"
+
+				if ($("#email").val() == "") {
+
+					fieldsMissing += "<br> Email"	
+
+				}
+
+				if ($("#phone").val() == "") {
+
+					fieldsMissing += "<br>Phone-No"				
+				}
+
+				if ($("#password").val() == "") {
+
+					fieldsMissing += "<br> create password"				
+				}
+
+				if ($("#passwordConfirm").val() == "") {
+
+					fieldsMissing += "<br>confirm your password"	
+
+							
+				}
+
+				if(fieldsMissing != "" ) {
+
+					errorMessage = "<p>the following fields are missing</p>" + fieldsMissing
+
+				}	
+				// once the submit button is clicked, and empty variable called error message is created
+
+				if(isEmail($("#email").val()) == false) {
+
+					// the isEmail function is then run again on the value as shown above
+
+					errorMessage += "<p> Your email address is not valid </p>"
+
+					// after the function is run, a false result means that the error message variable is updated to the above sentence and will eventually be shown for the viewer to correct his email address
+
+				}
+
+				if ($.isNumeric($("#phone").val()) == false) {
+
+				// the isNumeric function tests the value of the client's input to see whether it's purely numeric
+
+				// the isNumeric function is an original function of javascript and jQuery while the isEmail function was made up by me
+
+
+					errorMessage += "<p> Your phone number is not numeric </p>"
+				
+				//if the isNumeric test is false, the erroMessage variable is updated again
+
+				}
+				if ($("#password").val() != $("#passwordConfirm").val()) {
+
+					errorMessage += "<p> your password's don't match </p>"
+				}
+
+				if(errorMessage != "") {
+
+					$("#errorMessage").html(errorMessage)
+
+				} else {
+
+					$("#successMessage").html(successMessage)
+				}
+				
+			})
+			
+
+		</script>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+	</body>
+
+</html>
+
